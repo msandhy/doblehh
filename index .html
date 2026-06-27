@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOBLEH - Neotribal Ink Art Portfolio</title>
+    <!-- Tailwind CSS for modern responsive layout -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Premium Minimalist Font & Bold Gothic/Blackletter Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Pirata+One&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        gothic: ['"Pirata One"', 'system-ui', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Set up local font binding for Pauls 3-D Tribal */
+        @font-face {
+            font-family: 'Pauls 3-D Tribal';
+            src: local('Pauls 3-D Tribal'), 
+                 local('Pauls-3-D-Tribal'), 
+                 local('pauls_3_d_tribal'), 
+                 local('Pauls 3D Tribal');
+        }
+
+        /* Styling helper to give DOBLEH logo a premium, sharp 3D extrusion look */
+        .font-tribal-brand {
+            font-family: 'Pauls 3-D Tribal', 'Pauls 3D Tribal', 'pauls_3_d_tribal', 'Pirata One', system-ui, sans-serif;
+            text-shadow: 
+                1px 1px 0px #444444,
+                2px 2px 0px #2c2c2c,
+                3px 3px 0px #1a1a1a,
+                4px 4px 6px rgba(0, 0, 0, 0.9);
+        }
+
+        /* Hide scrollbars for an immersive presentation slide-like feel */
+        ::-webkit-scrollbar {
+            width: 0px;
+            background: transparent;
+        }
+        html {
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        
+        /* Smooth transitions for active link updates */
+        .header-link {
+            transition: color 0.3s ease;
+        }
+        .header-link.active {
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+<body class="bg-black text-white font-sans selection:bg-white selection:text-black overflow-x-hidden">
+
+    <!-- FIXED NAVIGATION HEADER -->
+    <header class="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-neutral-900/40">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 py-5 flex items-center justify-between">
+            <!-- Gothic/Tribal Brand Logo on the Far Left -->
+            <a href="#landing" class="font-tribal-brand text-3xl md:text-4xl tracking-[0.1em] text-white hover:text-neutral-200 transition-colors duration-300 shrink-0 uppercase">
+                DOBLEH
+            </a>
+
+            <!-- Navigation Links on the Far Right -->
+            <nav class="flex items-center space-x-6 md:space-x-10">
+                <a href="#artwork" data-sec="artwork" class="header-link text-xs uppercase tracking-[0.25em] text-[#666666] hover:text-white font-medium whitespace-nowrap">
+                    Artwork
+                </a>
+                <a href="#about" data-sec="about" class="header-link text-xs uppercase tracking-[0.25em] text-[#666666] hover:text-white font-medium whitespace-nowrap">
+                    About
+                </a>
+                <a href="#contact" data-sec="contact" class="header-link text-xs uppercase tracking-[0.25em] text-[#666666] hover:text-white font-medium whitespace-nowrap">
+                    Contact
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- MAIN SCROLL FEED -->
+    <main class="w-full">
+
+        <!-- SECTION 1: LANDING PAGE -->
+        <section id="landing" class="relative min-h-screen w-full bg-black flex flex-col items-center justify-center px-6 md:px-12 py-20">
+            <div class="w-full max-w-5xl flex items-center justify-center">
+                <!-- Slide 1: Landing Page image -->
+                <img src="Presentasi - Neotribal (2).png" 
+                     alt="DOBLEH Landing Slide" 
+                     class="w-full h-auto max-h-[85vh] object-contain mx-auto select-none pointer-events-none">
+            </div>
+        </section>
+
+        <!-- SECTION 2: ARTWORK GALLERY (FULL SCREEN) -->
+        <section id="artwork" class="relative h-screen w-screen bg-white flex flex-col justify-center items-center overflow-hidden">
+            <!-- Slide 2: Artwork Gallery set to completely fill viewport -->
+            <img src="Presentasi - Neotribal (1).png" 
+                 alt="Neotribal Artwork Grid Slide" 
+                 class="w-full h-full object-contain mx-auto select-none pointer-events-none">
+        </section>
+
+        <!-- SECTION 3: ABOUT PAGE -->
+        <section id="about" class="relative min-h-screen w-full bg-black flex flex-col justify-center items-center px-6 md:px-12 py-20">
+            <div class="w-full max-w-5xl flex items-center justify-center">
+                <!-- Slide 3: About page image -->
+                <img src="Presentasi - Neotribal (3).png" 
+                     alt="About backstory Slide" 
+                     class="w-full h-auto max-h-[85vh] object-contain mx-auto select-none pointer-events-none">
+            </div>
+        </section>
+
+        <!-- SECTION 4: CONTACT PAGE -->
+        <section id="contact" class="relative min-h-screen w-full bg-black flex flex-col justify-center items-center px-6 md:px-12 py-20">
+            <div class="w-full max-w-5xl flex items-center justify-center">
+                <!-- Slide 4: Contact details image -->
+                <img src="Presentasi - Neotribal (4).png" 
+                     alt="Contact Details Slide" 
+                     class="w-full h-auto max-h-[85vh] object-contain mx-auto select-none pointer-events-none">
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // Track page sections and highlight matching active states in header
+        const sections = document.querySelectorAll('section');
+        const headerLinks = document.querySelectorAll('.header-link');
+
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            let current = "";
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // Highlight offset trigger
+                if (scrollPos >= (sectionTop - 300)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            headerLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-sec') === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
